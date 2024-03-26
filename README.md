@@ -12,13 +12,13 @@ Install the plugin with package manager:
 ### [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
-{
+return {
     'Hecatoncheir/brackets_highlighter',
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
     },
     config = function()
-         require('brackets_highlighter').setup({
+        require('brackets_highlighter').setup({
             ['extensions'] = {
                 ['*.lua'] = {
                     ['bracketOpenIcon'] = '',
@@ -76,8 +76,8 @@ Install the plugin with package manager:
                     },
                 },
             },
-         })
-     end
+        })
+    end
 }
 ```
 
