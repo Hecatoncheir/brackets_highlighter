@@ -69,11 +69,7 @@ local defaultOptions = {
 
 
 M.setup = function(opt)
-    local options;
-    if opt ~= nil then
-        for k, v in pairs(opt) do defaultOptions[k] = v end
-        options = defaultOptions
-    end
+    local options = vim.tbl_deep_extend('force', defaultOptions, opt or {})
 
     local group = api.nvim_create_augroup('BracketsHighlighterBuffer', { clear = true })
 
