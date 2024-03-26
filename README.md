@@ -2,6 +2,8 @@
 
 Highlight open and close brackets icons.
 
+![Preview!](preview.png)
+
 
 ## Installation
 
@@ -78,6 +80,4 @@ Install the plugin with package manager:
      end
 }
 ```
-
-![Preview!](preview.png)
 
