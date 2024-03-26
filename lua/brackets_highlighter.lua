@@ -70,7 +70,8 @@ local defaultOptions = {
 
 M.setup = function(opt)
     local options;
-    if opt == nil then
+    if opt != nil then
+        for k, v in pairs(opt) do defaultOptions[k] = v end
         options = defaultOptions
     end
 
