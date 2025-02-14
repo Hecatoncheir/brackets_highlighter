@@ -1,30 +1,25 @@
 local api = vim.api
 
-local icon_creator = {}
+local gutter = {}
 
-icon_creator.createBracketOpenIconForExtension = function(extension, icon)
+gutter.createBracketOpenIconForExtension = function(extension, icon)
   local signName = extension .. "_bracketOpen"
-
-  -- local definedSign = vim.fn.sign_getdefined(signName)
-  -- if definedSign ~= nil then
-  --     vim.fn.sign_undefine({ signName })
-  -- end
 
   vim.fn.sign_define(signName, { text = icon })
 end
 
-icon_creator.createBracketCloseIconForExtension = function(extension, icon)
+gutter.createBracketCloseIconForExtension = function(extension, icon)
   local signName = extension .. "_bracketClose"
   vim.fn.sign_define(signName, { text = icon })
 end
 
-icon_creator.createBracketsOpenAndCloseIconForExtension = function(extension, icon)
+gutter.createBracketsOpenAndCloseIconForExtension = function(extension, icon)
   local signName = extension .. "_bracketsOpenAndClose"
   vim.fn.sign_define(signName, { text = icon })
 end
 
 
-icon_creator.showOpenBracketOnLine = function(extension, buf, lineNumber)
+gutter.showOpenBracketOnLine = function(extension, buf, lineNumber)
   vim.fn.sign_place(
     0,
     extension .. "_bracketOpen",
@@ -34,7 +29,7 @@ icon_creator.showOpenBracketOnLine = function(extension, buf, lineNumber)
   )
 end
 
-icon_creator.showCloseBracketOnLine = function(extension, buf, lineNumber)
+gutter.showCloseBracketOnLine = function(extension, buf, lineNumber)
   vim.fn.sign_place(
     0,
     extension .. "_bracketClose",
@@ -44,7 +39,7 @@ icon_creator.showCloseBracketOnLine = function(extension, buf, lineNumber)
   )
 end
 
-icon_creator.showOpenAndCloseBracketsOnLine = function(extension, buf, lineNumber)
+gutter.showOpenAndCloseBracketsOnLine = function(extension, buf, lineNumber)
   vim.fn.sign_place(
     0,
     extension .. "_bracketsOpenAndClose",
@@ -54,4 +49,4 @@ icon_creator.showOpenAndCloseBracketsOnLine = function(extension, buf, lineNumbe
   )
 end
 
-return icon_creator
+return gutter
