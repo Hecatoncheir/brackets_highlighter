@@ -49,4 +49,10 @@ gutter.showOpenAndCloseBracketsOnLine = function(extension, buf, lineNumber)
   )
 end
 
+gutter.hideBrackets = function(extension)
+  vim.fn.sign_unplace(extension .. "_bracketOpen")
+  vim.fn.sign_unplace(extension .. "_bracketClose")
+  vim.fn.sign_unplace(extension .. "_bracketsOpenAndClose")
+end
+
 return gutter
