@@ -17,31 +17,31 @@ brackets_highlighter.setup = function(opt)
       group = group,
       pattern = extension,
       callback = function(data)
-        local extension_tag = extension:gsub("[*.]", "")
+        local extension = extension:gsub("[*.]", "")
 
         local bracketOpenIcon = settings['bracketOpenIcon']
         if bracketOpenIcon ~= 'auto' then
-          gutter.createBracketOpenIconForExtension(extension_tag, bracketOpenIcon)
+          gutter.createBracketOpenIconForExtension(extension, bracketOpenIcon)
         else
-          gutter.createBracketOpenIconForExtension(extension_tag, '')
+          gutter.createBracketOpenIconForExtension(extension, '')
         end
 
         local bracketCloseIcon = settings['bracketCloseIcon']
         if bracketCloseIcon ~= 'auto' then
-          gutter.createBracketCloseIconForExtension(extension_tag, bracketCloseIcon)
+          gutter.createBracketCloseIconForExtension(extension, bracketCloseIcon)
         else
-          gutter.createBracketCloseIconForExtension(extension_tag, '')
+          gutter.createBracketCloseIconForExtension(extension, '')
         end
 
         local bracketsOpenAndCloseIcon = settings['bracketsOpenAndCloseIcon']
         if bracketsOpenAndCloseIcon ~= 'auto' then
-          gutter.createBracketsOpenAndCloseIconForExtension(extension_tag, bracketsOpenAndCloseIcon)
+          gutter.createBracketsOpenAndCloseIconForExtension(extension, bracketsOpenAndCloseIcon)
         else
-          gutter.createBracketsOpenAndCloseIconForExtension(extension_tag, '')
+          gutter.createBracketsOpenAndCloseIconForExtension(extension, '')
         end
 
         local buf = data.buf
-        brackets_highlighter.onCursorMove(buf, extension_tag, settings)
+        brackets_highlighter.onCursorMove(buf, extension, settings)
       end
     })
   end
