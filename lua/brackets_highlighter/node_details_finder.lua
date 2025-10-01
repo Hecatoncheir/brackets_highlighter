@@ -1,9 +1,10 @@
-local ts_utils = require('nvim-treesitter.ts_utils')
+-- local ts_utils = require('nvim-treesitter.ts_utils')
 
 local node_details_finder = {}
 
 node_details_finder.get_node_at_cursor = function()
-  return ts_utils.get_node_at_cursor()
+  return vim.treesitter.get_node()
+  -- return ts_utils.get_node_at_cursor()
 end
 
 node_details_finder.isContains = function(tab, val)
